@@ -115,5 +115,41 @@ export const Produce = [
         image: "./images/products/sourdough.webp",
         name: "Sourdough",
         description: "Bake a fresh loaf of sourdough bread with our ultimate recipe collection, then turn it into tasty canapés or a hearty traybake."
+    },
+    {
+        id: 11,
+        image: "./images/products/Almond-croissant.png",
+        name: "Almond croissant",
+        description: "Croissant with almond filling."
+    },
+    {
+        id: 12,
+        image: "./images/products/Apple_turnover.png",
+        name: "Apple Turnover.png",
+        description: "Pastry filled with apple."
+    },
+    {
+        id: 13,
+        image: "./images/products/chocolat_croissant.png",
+        name: "Pain au Chocolat",
+        description: "Chocolate-filled pastry."
+    },
+    {
+        id: 14,
+        image: "./images/products/Cinnamon_roll.png",
+        name: "Cinnamon Roll",
+        description: "Sweet, spiced pastry."
+    },
+    {
+        id: 15,
+        image: "./images/products/Eclair.png",
+        name: "Eclair",
+        description: "Cream-filled pastry."
+    },
+    {
+        id: 16,
+        image: "./images/products/Crushed-Pineapple-Cake.webp",
+        name: "Crushed Pineapple Cake",
+        description: "Pineapple cream cheese."
     }
 ]
