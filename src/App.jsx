@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router"
 import Layout from "./assets/components/Layout"
-import Home from "./assets/components/pages/HomePage"
+import Home from "./assets/components/pages/Homepage"
 import Order from "./assets/components/pages/Cart"
 import Register from "./assets/components/pages/Profile"
 import Services from "./assets/components/pages/Services"
