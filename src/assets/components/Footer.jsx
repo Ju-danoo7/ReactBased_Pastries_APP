@@ -25,7 +25,7 @@ export default function Footer() {
                     <span className="text-sm">Services</span>
                 </Link>
             </div>
-            <div className="flex items-center justify-center gap-5 px-4 pb-4">
+            <div className="flex flex-col items-center justify-center gap-5 px-4 pb-4">
                 <span className="text-sm font-semibold w-28">Follow us on any of our platforms</span>
                 <ul className="flex items-center justify-center gap-3">
                     <a href="#"><img src="./images/instagram.svg" alt="instagram-icon" className="w-7" /></a>
