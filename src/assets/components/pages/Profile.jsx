@@ -40,6 +40,7 @@ return (
                         Already have an account? <Link className="underline text-blue-300">
                             <button onClick={toggleAccount}>Sign In</button>
                         </Link>
+                        </p>
                 </div>}
         </div>
     </>
