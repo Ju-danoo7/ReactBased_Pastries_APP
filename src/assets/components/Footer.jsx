@@ -1,0 +1,38 @@
+import { Link } from "react-router";
+
+export default function Footer() {
+    return (
+        <>
+            <div className="flex justify-between p-4 px-6">
+                <Link className="flex flex-col items-center gap-2">
+                    <img src="./images/homeIcon.svg" alt="home-icon" className="w-5" />
+                    <span className="text-sm">Home</span>
+                </Link>
+                <Link className="flex flex-col items-center gap-1">
+                    <img src="./images/cart.svg" alt="cart-icon" className="w-6" />
+                    <span className="text-sm">Cart</span>
+                </Link>
+                <Link className="flex flex-col items-center gap-1">
+                    <img src="./images/profile.png" alt="profile-icon" className="w-6" />
+                    <span className="text-sm">Profile</span>
+                </Link>
+                <Link className="flex flex-col items-center gap-1">
+                    <img src="./images/search.svg" alt="" className="w-6" />
+                    <span className="text-sm">Products</span>
+                </Link>
+                <Link className="flex flex-col items-center gap-2">
+                    <img src="./images/servise.png" alt="menu-icon" className="w-5" />
+                    <span className="text-sm">Services</span>
+                </Link>
+            </div>
+            <div className="flex items-center justify-center gap-5 px-4 pb-4">
+                <span className="text-sm font-semibold w-28">Follow us on any of our platforms</span>
+                <ul className="flex items-center justify-center gap-3">
+                    <a href="#"><img src="./images/instagram.svg" alt="instagram-icon" className="w-7" /></a>
+                    <a href="#"><img src="./images/facebook.svg" alt="facebook-icon" className="w-9" /></a>
+                    <a href="#"><img src="./images/x.svg" alt="x-icon" className="w-8" /></a>
+                </ul>
+            </div>
+        </>
+    )
+}
