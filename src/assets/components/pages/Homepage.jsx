@@ -25,7 +25,7 @@ export default function Home() {
                     </div>
             </div>
             <div className="p-4">
-                <Link to=""
+                <Link to="cart"
                     className="flex items-center justify-center w-full h-12 bg-amber-700 text-white rounded-lg font-bold text-lg tracking-wide">
                     Order Now
                 </Link>
