@@ -11,7 +11,8 @@ export default function Products() {
 
     return (
         <>
-            <div className="bg-slate-100 py-4 px-2">
+            <div className="bg-slate-100 py-4 px-4">
+                <p className="text-sm font-semibold mb-4">What we offer and more, on request and on limited sales</p>
                 <h1 className="font-bold text-2xl">Our Products</h1>
                 <div className="flex flex-wrap justify-center gap-3">
                     {Productz}

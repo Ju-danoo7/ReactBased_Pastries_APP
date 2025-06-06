@@ -26,11 +26,15 @@ export default function Footer() {
                 </Link>
             </div>
             <div className="flex flex-col items-center justify-center gap-5 px-4 pb-4">
-                <span className="text-sm font-semibold w-28">Follow us on any of our platforms</span>
-                <ul className="flex items-center justify-center gap-3">
+                <span className="text-sm font-semibold">Reach us on any of our platforms</span>
+                <ul className="flex items-center justify-between gap-4">
                     <a href="#"><img src="./images/instagram.svg" alt="instagram-icon" className="w-7" /></a>
                     <a href="#"><img src="./images/facebook.svg" alt="facebook-icon" className="w-9" /></a>
                     <a href="#"><img src="./images/x.svg" alt="x-icon" className="w-8" /></a>
+                    <li className="flex flex-col items-center gap-2">
+                        <span className=""><img className="w-5" src="./images/phone.png" alt="phone-icon" /></span>
+                        <span className="">555-234-542</span>
+                    </li>
                 </ul>
             </div>
         </>
