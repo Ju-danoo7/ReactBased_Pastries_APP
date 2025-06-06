@@ -35,6 +35,10 @@ export default function Register() {
                             <input type="text" className="w-full h-14 bg-gray-100 rounded-lg p-4 outline-0 border-0" name="loginId" placeholder="Username/Login ID" />
                             <button className="w-full h-12 text-white bg-black font-bold text-sm rounded-full">Sign Up</button>
                         </form>
+                        <p className="text-sm font-semibold mt-4 text-center">
+                            Already have an account? <Link className="underline text-blue-300">
+                                <button onClick={toggleAccount}>Sign In</button>
+                            </Link>
                     </div>}
             </div>
         </>
