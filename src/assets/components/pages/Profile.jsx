@@ -12,7 +12,7 @@ return (
     <>
         <div className="">
             <img className=" w-full h-75" src="./images/products/Pineapple.webp" alt="pastry-image" />
-            {haveAccount ? <div className="p-6">
+            {haveAccount? <div className="p-6">
                 <h1 className="font-bold text-2xl flex items-center justify-center my-3">Log In</h1>
                 <form className="flex flex-wrap items-center justify-center gap-8 py-4" action="#">
                     <input type="text" className="w-full h-14 bg-gray-100 rounded-lg p-4 outline-0 border-0" name="login" placeholder="Email or Login ID" />
