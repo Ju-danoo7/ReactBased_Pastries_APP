@@ -4,23 +4,23 @@ export default function Footer() {
     return (
         <>
             <div className="flex justify-between p-4 px-6">
-                <Link className="flex flex-col items-center gap-2">
+                <Link to="." className="flex flex-col items-center gap-2">
                     <img src="./images/homeIcon.svg" alt="home-icon" className="w-5" />
                     <span className="text-sm">Home</span>
                 </Link>
-                <Link className="flex flex-col items-center gap-1">
+                <Link to="cart" className="flex flex-col items-center gap-1">
                     <img src="./images/cart.svg" alt="cart-icon" className="w-6" />
                     <span className="text-sm">Cart</span>
                 </Link>
-                <Link className="flex flex-col items-center gap-1">
+                <Link to="profile" className="flex flex-col items-center gap-1">
                     <img src="./images/profile.png" alt="profile-icon" className="w-6" />
                     <span className="text-sm">Profile</span>
                 </Link>
-                <Link className="flex flex-col items-center gap-1">
+                <Link to="products" className="flex flex-col items-center gap-1">
                     <img src="./images/search.svg" alt="" className="w-6" />
                     <span className="text-sm">Products</span>
                 </Link>
-                <Link className="flex flex-col items-center gap-2">
+                <Link to="services" className="flex flex-col items-center gap-2">
                     <img src="./images/servise.png" alt="menu-icon" className="w-5" />
                     <span className="text-sm">Services</span>
                 </Link>
