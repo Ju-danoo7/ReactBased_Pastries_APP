@@ -38,7 +38,7 @@ export default function Layout() {
                 <NavLink to="." className="font-bold text-lg">
                     Pasteries Delight
                 </NavLink>
-                <NavLink to="" className="font-bold">
+                <NavLink to="cart" className="font-bold">
                     <img src="./images/cart.svg" alt="cart-icon" aria-label='link to purchase page' />
                 </NavLink>
 

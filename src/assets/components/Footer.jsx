@@ -1,29 +1,29 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 export default function Footer() {
     return (
         <>
             <div className="flex justify-between p-4 px-6">
-                <Link to="." className="flex flex-col items-center gap-2">
+                <NavLink to="." className={`flex flex-col items-center gap-2 ${({ isActive }) => isActive ? "border-b-2 pb-1" : ""}`}>
                     <img src="./images/homeIcon.svg" alt="home-icon" className="w-5" />
                     <span className="text-sm">Home</span>
-                </Link>
-                <Link to="cart" className="flex flex-col items-center gap-1">
+                </NavLink>
+                <NavLink to="cart" className="flex flex-col items-center gap-1">
                     <img src="./images/cart.svg" alt="cart-icon" className="w-6" />
                     <span className="text-sm">Cart</span>
-                </Link>
-                <Link to="profile" className="flex flex-col items-center gap-1">
+                </NavLink>
+                <NavLink to="profile" className="flex flex-col items-center gap-1">
                     <img src="./images/profile.png" alt="profile-icon" className="w-6" />
                     <span className="text-sm">Profile</span>
-                </Link>
-                <Link to="products" className="flex flex-col items-center gap-1">
+                </NavLink>
+                <NavLink to="products" className="flex flex-col items-center gap-1">
                     <img src="./images/search.svg" alt="" className="w-6" />
                     <span className="text-sm">Products</span>
-                </Link>
-                <Link to="services" className="flex flex-col items-center gap-2">
+                </NavLink>
+                <NavLink to="services" className="flex flex-col items-center gap-2">
                     <img src="./images/servise.png" alt="menu-icon" className="w-5" />
                     <span className="text-sm">Services</span>
-                </Link>
+                </NavLink>
             </div>
             <div className="flex flex-col items-center justify-center gap-5 px-4 pb-4">
                 <span className="text-sm font-semibold w-28">Follow us on any of our platforms</span>

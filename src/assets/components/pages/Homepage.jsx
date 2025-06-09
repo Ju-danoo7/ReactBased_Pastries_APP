@@ -9,7 +9,7 @@ export default function Home() {
         </div>))
 
     return (
-        <div className="font-Poppins bg-slate-50 min-h-screen">
+        <div className="font-Poppins bg-slate-50 min-h-screen scrollbar-hide">
             <div className="relative">
                 <img className="w-full"
                     src="./images/HomeImage.png" alt="home page image" />
@@ -18,11 +18,11 @@ export default function Home() {
                     Indulge in Our Exquisite Pastries
                 </h1>
             </div>
-            <div className="py-6 overflow-x-cliphidden">
+            <div className="py-6 overflow-x-cliphidden scrollbar-hide">
                 <h2 className="font-bold text-2xl px-4 mt-3 mb-6">Featured Pastries</h2>
-                    <div className="flex flex-nowrap gap-3 px-2  overflow-x-scroll">
-                        {Pastries}
-                    </div>
+                <div className="flex flex-nowrap gap-3 px-2  overflow-x-scroll scrollbar-none">
+                    {Pastries}
+                </div>
             </div>
             <div className="p-4">
                 <Link to="cart"
