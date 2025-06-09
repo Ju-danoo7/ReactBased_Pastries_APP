@@ -4,23 +4,23 @@ export default function Footer() {
     return (
         <>
             <div className="flex justify-between p-4 px-6">
-                <NavLink to="." className={`flex flex-col items-center gap-2 ${({ isActive }) => isActive ? "border-b-2 pb-1" : ""}`}>
+                <NavLink to="." className={({ isActive }) => isActive ? "border-b-2 pb-1 flex flex-col items-center gap-2" : "flex flex-col items-center gap-2"}>
                     <img src="./images/homeIcon.svg" alt="home-icon" className="w-5" />
                     <span className="text-sm">Home</span>
                 </NavLink>
-                <NavLink to="cart" className="flex flex-col items-center gap-1">
+                <NavLink to="cart" className={({ isActive }) => isActive ? "border-b-2 pb-1 flex flex-col items-center gap-1" : "flex flex-col items-center gap-1"}>
                     <img src="./images/cart.svg" alt="cart-icon" className="w-6" />
                     <span className="text-sm">Cart</span>
                 </NavLink>
-                <NavLink to="profile" className="flex flex-col items-center gap-1">
+                <NavLink to="profile" className={({ isActive }) => isActive ? "border-b-2 pb-1 flex flex-col items-center gap-1" : "flex flex-col items-center gap-1"}>
                     <img src="./images/profile.png" alt="profile-icon" className="w-6" />
                     <span className="text-sm">Profile</span>
                 </NavLink>
-                <NavLink to="products" className="flex flex-col items-center gap-1">
+                <NavLink to="products" className={({ isActive }) => isActive ? "border-b-2 pb-1 flex flex-col items-center gap-1" : "flex flex-col items-center gap-1"}>
                     <img src="./images/search.svg" alt="" className="w-6" />
                     <span className="text-sm">Products</span>
                 </NavLink>
-                <NavLink to="services" className="flex flex-col items-center gap-2">
+                <NavLink to="services" className={({ isActive }) => isActive ? "border-b-2 pb-1 flex flex-col items-center gap-2" : "flex flex-col items-center gap-2"}>
                     <img src="./images/servise.png" alt="menu-icon" className="w-5" />
                     <span className="text-sm">Services</span>
                 </NavLink>

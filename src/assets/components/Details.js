@@ -5,29 +5,29 @@ export const featuredPastries = [
         id: 1,
         name: "Chocolate Croissant",
         description: "A flaky, buttery croissant filled with rich chocolate.",
-        price: 3.50,
-        image: "./images/chocolate-croissant.jpg"
+        price: 3.5,
+        image: "./images/products/chocolat_croissant.png"
     },
     {
         id: 2,
         name: "Fruit Tart",
         description: "A crisp pastry shell filled with creamy custard and topped with fresh seasonal fruits.",
-        price: 4.00,
-        image: "./images/fruit-tart.jpg"
+        price: 4,
+        image: "./images/products/Peach-tart.webp"
     },
     {
         id: 3,
         name: "Almond Biscotti",
         description: "Crunchy almond biscotti perfect for dipping in coffee or tea.",
-        price: 2.50,
-        image: "./images/almond-biscotti.jpg"
+        price: 2.5,
+        image: "./images/products/Almond-croissant.png"
     },
     {
         id: 4,
-        name: "Lemon Meringue Pie",
-        description: "A tangy lemon filling topped with fluffy meringue on a buttery crust.",
-        price: 5.00,
-        image: "./images/lemon-meringue-pie.jpg"
+        name: "Pineapple Cake",
+        description: "A moist cake made with crushed pineapple and topped with cream cheese frosting.",
+        price: 5,
+        image: "./images/products/Crushed-Pineapple-Cake.webp"
     }
 ]
 
