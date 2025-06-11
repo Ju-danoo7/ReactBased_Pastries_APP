@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Container(props) {
     const [carted, setCarted] = useState(false);
     const [amount, setAmount] = useState(0);
+    const [arr, setArr] = useState([]);
+
+    useEffect(() => {
+
+    }, [])
     function addAmount() {
         setAmount(prev => prev + 1);
     }
@@ -12,7 +17,7 @@ export default function Container(props) {
 
     return (
         <>
-            <div className=" shadow-lg p-2 w-full">
+            <div id={props.id} className=" shadow-lg p-2 w-full">
                 <div className="flex w-full justify-center items-center">
                     <div className="relative flex w-full justify-center items-center rounded-sm">
                         <img src={props.image} alt="pastry image" className="w-full h-75 rounded-md" />

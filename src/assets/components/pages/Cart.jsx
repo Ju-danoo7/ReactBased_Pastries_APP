@@ -3,7 +3,6 @@ import { featuredPastries } from "../Details";
 import Container from "./Container";
 
 export default function Order() {
-    const [carted, setCarted] = useState(false);
 
     return (
         <>
@@ -12,8 +11,14 @@ export default function Order() {
                 key={pastry.id}
                 image={pastry.image}
                 price={pastry.price}
+                id={pastry.id}
             />)
             }
+            {featuredPastries.map(pastry => {
+            })
+            }
+
+
         </>
     )
 }
