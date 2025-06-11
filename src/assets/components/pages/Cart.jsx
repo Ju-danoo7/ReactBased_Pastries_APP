@@ -14,17 +14,17 @@ export default function Order() {
                 price={pastry.price}
             />)
             }
-            {
-                // carted && <div className="p-4 flex flex-col gap-2 w-64 mx-auto">
-                //     <div className="flex justify-between text-sm">
-                //         <p className="font-semibold">Pasties</p>
-                //         <span className="flex gap-2">
-                //             <span className="">Amount:</span>
-                //             <span className=" font-bold">Total: ${amount * 3}.00</span>
-                //         </span>
-                //     </div>
-                // </div>
-            }
         </>
     )
 }
+// {
+//     carted && <div className="p-4 flex flex-col gap-2 w-64 mx-auto">
+//         <div className="flex justify-between text-sm">
+//             <p className="font-semibold">Pasties</p>
+//             <span className="flex gap-2">
+//                 <span className="">Amount:</span>
+//                 <span className=" font-bold">Total: ${amount * 3}.00</span>
+//             </span>
+//         </div>
+//     </div>
+// }
