@@ -7,7 +7,7 @@ import Footer from './Footer';
 export default function Layout() {
     const [collapseMenu, setCollapseMenu] = useState(true);
     const [emptyCart, setEmptyCart] = useState(true);
-    const [clicked, setClicked] = useState(false);
+    const [value, setValue] = useState(0);
 
     const toggleMenu = () => {
         setCollapseMenu(!collapseMenu);
@@ -38,7 +38,7 @@ export default function Layout() {
                 <NavLink to="." className="font-bold text-lg">
                     Pasteries Delight
                 </NavLink>
-                <NavLink to="cart" className="font-bold">
+                <NavLink to="cart" className="font-bold flex relative">{value > 0 ? <span className='flex items-center justify-center bg-amber-600 p-1 absolute text-xs w-4 h-4 rounded-full -top-2 -left-3'>{value}</span> : null}
                     <img src="./images/cart.svg" alt="cart-icon" aria-label='link to purchase page' />
                 </NavLink>
 
@@ -60,8 +60,8 @@ export default function Layout() {
                         to="services"
                         className={({ isActive }) => isActive ? "font-bold border-b-2 pb-1" : ""}>Services</NavLink>
                 </ul>
-            </div>
-            <Outlet />
+            </div >
+            <Outlet context={[value, setValue]} />
             <Footer />
 
         </>
