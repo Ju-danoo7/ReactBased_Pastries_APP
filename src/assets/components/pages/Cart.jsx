@@ -45,11 +45,14 @@ export default function Order() {
         setLayout(!Layout);
     }
     function handleLayoutChangeOut() {
-        featuredPastries.forEach(pastry => setCart(prev => ({
-            ...prev,
-            [pastry.id]: { ...prev[id], amount: 0 }
-        })));
-        setLayout(!Layout);
+        setCart(prev => {
+            const newCart = { ...prev };
+            featuredPastries.forEach(pastry => {
+                newCart[pastry.id] = { ...newCart[pastry.id], amount: 0, carted: false };
+            });
+            setLayout(false);
+            return newCart;
+        })
     }
 
     return (
