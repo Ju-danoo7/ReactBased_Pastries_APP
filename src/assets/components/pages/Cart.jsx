@@ -5,8 +5,12 @@ import { useOutletContext } from "react-router";
 
 export default function Order() {
     const [cart, setCart] = useState([]);
-    const [itemsInCart, setItemsInCart] = useState(0);
     const [value, setValue] = useOutletContext()
+    const itemsInCartArr = Object.entries(cart).map(([id, item]) => item.amount)
+    const cartItemsnum = itemsInCartArr.reduce((acc, amount) => acc + amount, 0);
+    useEffect(() => {
+        setValue(cartItemsnum);
+    }, [cartItemsnum])
 
     function handleAmountChange(id, newAmount) {
         setCart(prev => ({
@@ -27,7 +31,7 @@ export default function Order() {
     }, 0);
 
     const selectedItems = featuredPastries.map(
-        item => cart[item.id] ?
+        item => cart[item.id]?.amount > 0 ?
             <div className="flex rounded-md justify-between items-center px-4 w-full text-md" key={item.id}>
                 <p className="font-semibold">{item.name}</p>
                 <div className="flex items-center gap-2">
@@ -36,11 +40,6 @@ export default function Order() {
                 </div>
             </div> : null
     );
-    const itemsInCartArr = Object.entries(cart).map(([id, item]) => item.amount)
-    const cartItemsnum = itemsInCartArr.reduce((acc, amount) => acc + amount, 0);
-    useEffect(() => {
-        setValue(cartItemsnum);
-    }, [cartItemsnum])
 
     return (
         <>
@@ -57,16 +56,24 @@ export default function Order() {
                 onCartedChange={handleCartedChange}
             />)}
 
-            <div className="m-4 bg-white shadow-md p-4 rounded-md flex flex-col gap-2">
-                {selectedItems}
-                <div className="p-4 flex flex-col gap-2 mx-auto">
-                    <div className="flex justify-center gap-4 text-lg">
-                        <p className="font-semibold">Total :</p>
-                        <span className="font-semibold">{cartItemsnum} Items @</span>
-                        <span className="font-bold">${total.toLocaleString("en", { minimumFractionDigits: 2 })}</span>
+            {
+                value > 0 ?
+                    <div className="m-4 bg-white shadow-md p-4 rounded-md flex flex-col gap-2">
+                        {selectedItems}
+                        <div className="p-4 flex flex-col gap-2 mx-auto">
+                            <div className="flex justify-center gap-4 text-lg">
+                                <p className="font-semibold">Total :</p>
+                                <span className="font-semibold">{cartItemsnum} Items @</span>
+                                <span className="font-bold">${total.toLocaleString("en", { minimumFractionDigits: 2 })}</span>
+                            </div>
+                        </div>
+                        <button className="bg-amber-600 text-white font-bold text-lg tracking-wide w-full h-12 rounded-lg">
+                            Checkout
+                        </button>
                     </div>
-                </div>
-            </div>
+                    :
+                    <p className="text-center text-gray-500 m-4 bg-white shadow-md p-4 rounded-md">Your cart is empty</p>
+            }
 
         </>
     )

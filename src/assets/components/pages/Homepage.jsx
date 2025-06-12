@@ -18,9 +18,9 @@ export default function Home() {
                     Indulge in Our Exquisite Pastries
                 </h1>
             </div>
-            <div className="py-6 overflow-x-cliphidden scrollbar-hide">
+            <div className="py-6">
                 <h2 className="font-bold text-2xl px-4 mt-3 mb-6">Featured Pastries</h2>
-                <div className="flex flex-nowrap gap-3 px-2  overflow-x-scroll scrollbar-none">
+                <div className="flex flex-nowrap gap-3 px-2 overflow-x-scroll scrollbar-hide">
                     {Pastries}
                 </div>
             </div>

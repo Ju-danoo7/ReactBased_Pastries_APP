@@ -29,7 +29,7 @@ export default function Container(props) {
                                     src="./images/plus.svg" alt="cart-icon" className="w-5" />
                             </div> :
                             <div onClick={() => props.onCartedChange(props.id, true)}
-                                className="flex justify-center items-center gap-1 bg-orange-500 rounded-full h-10 w-34 absolute -bottom-6">
+                                className="flex justify-center items-center gap-1 bg-orange-500 rounded-full h-10 w-34 absolute -bottom-4">
                                 <span className="text-sm font-semibold">Add to cart</span>
                                 <img src="./images/cart.svg" alt="cart-icon" />
                             </div>}
