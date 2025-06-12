@@ -12,19 +12,21 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Suspense fallback={<div className="flex items-center justify-center h-screen">Loading...</div>}>
-          <Routes>
-            <Route path="/" element={<Layout />} >
-              <Route index element={<Home />} />
-              <Route path="cart" element={<Order />} />
-              <Route path="profile" element={<Register />} />
-              <Route path="products" element={<Products />} />
-              <Route path="services" element={<Services />} />
-            </Route>
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
+      <div className="bg-gray-50">
+        <BrowserRouter>
+          <Suspense fallback={<div className="flex items-center justify-center h-screen">Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<Layout />} >
+                <Route index element={<Home />} />
+                <Route path="cart" element={<Order />} />
+                <Route path="profile" element={<Register />} />
+                <Route path="products" element={<Products />} />
+                <Route path="services" element={<Services />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </div>
     </>
   )
 }

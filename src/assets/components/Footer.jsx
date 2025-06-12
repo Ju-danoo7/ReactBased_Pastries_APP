@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 export default function Footer() {
     return (
         <>
-            <div className="flex justify-between p-4 px-6">
+            <div className="flex bg-white justify-between p-4 md:py-2 px-6 max-w-5xl mx-auto shadow-lg/10">
                 <NavLink to="." className={({ isActive }) => isActive ? "border-b-2 pb-1 flex flex-col items-center gap-2" : "flex flex-col items-center gap-2"}>
                     <img src="./images/homeIcon.svg" alt="home-icon" className="w-5" />
                     <span className="text-sm">Home</span>

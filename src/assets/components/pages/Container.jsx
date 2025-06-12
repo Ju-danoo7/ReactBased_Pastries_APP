@@ -15,7 +15,7 @@ export default function Container(props) {
 
     return (
         <>
-            <div id={props.id} className=" shadow-lg p-2 w-full bg-white rounded-lg">
+            <div id={props.id} className=" shadow-lg p-2 w-full md:w-88 bg-white rounded-lg">
                 <div className="flex w-full justify-center items-center">
                     <div className="relative flex w-full justify-center items-center rounded-sm">
                         <img src={props.image} alt="pastry image" className="w-full h-75 rounded-md" />

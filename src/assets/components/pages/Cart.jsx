@@ -64,23 +64,25 @@ export default function Order() {
 
     return (
         <>
-            <div className="bg-slate-50 relative p-3 flex flex-col gap-4 min-h-screen font-Poppins">
+            <div className="bg-white relative p-3 flex flex-col gap-4 min-h-screen font-Poppins max-w-5xl mx-auto shadow-lg/10">
                 <h1 ref={topRef} className="font-bold text-2xl pl-8 font-Poppins">Cart Component</h1>
-                {featuredPastries.map(pastry => <Container
-                    key={pastry.id}
-                    image={pastry.image}
-                    price={pastry.price}
-                    name={pastry.name}
-                    id={pastry.id}
-                    amount={cart[pastry.id]?.amount || 0}
-                    carted={cart[pastry.id]?.carted || false}
-                    onAmountChange={handleAmountChange}
-                    onCartedChange={handleCartedChange}
-                />)}
+                <div className=" flex flex-wrap gap-4 items-center justify-center">
+                    {featuredPastries.map(pastry => <Container
+                        key={pastry.id}
+                        image={pastry.image}
+                        price={pastry.price}
+                        name={pastry.name}
+                        id={pastry.id}
+                        amount={cart[pastry.id]?.amount || 0}
+                        carted={cart[pastry.id]?.carted || false}
+                        onAmountChange={handleAmountChange}
+                        onCartedChange={handleCartedChange}
+                    />)}
+                </div>
 
                 {
                     value > 0 ?
-                        <div className="m-4 bg-white shadow-md p-4 rounded-md flex flex-col gap-2">
+                        <div className="m-4 bg-white shadow-md p-4 rounded-md flex flex-col gap-2 md:w-lg mx-auto">
                             {selectedItems}
                             <div className="p-4 flex flex-col gap-2 mx-auto">
                                 <div className="flex justify-center gap-4 text-lg">
@@ -95,10 +97,10 @@ export default function Order() {
                             </button>
                         </div>
                         :
-                        <p className="text-center text-gray-500 m-4 bg-white shadow-md p-4 rounded-md">Your cart is empty</p>
+                        <p className=" md:w-lg mx-auto text-center text-gray-500 m-4 bg-white shadow-md p-4 rounded-md">Your cart is empty</p>
                 }
-                {Layout && <div className="absolute inset-0 bg-gray-300/50 z-10">
-                    <div className="m-4 bg-white shadow-md p-4 rounded-md flex flex-col gap-2">
+                {Layout && <div className="absolute inset-0 bg-gray-300/50 z-10 flex items-start justify-center pt-8">
+                    <div className="m-4 bg-white shadow-md p-4 rounded-md flex flex-col gap-2 w-84 ">
                         {selectedItems}
                         <div className="p-4 flex flex-col gap-2 mx-auto">
                             <div className="flex justify-center gap-4 text-lg">

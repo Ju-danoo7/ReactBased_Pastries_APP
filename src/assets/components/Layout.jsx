@@ -16,8 +16,8 @@ export default function Layout() {
     }
     return (
         <>
-            <div className="flex items-center justify-between shadow-sm h-12 px-3 gap-3">
-                <div className="" onClick={toggleMenu}>
+            <div className="flex items-center bg-white justify-between shadow-sm h-12 md:h-16 px-3 md:px-4 gap-3 max-w-5xl mx-auto">
+                <div className="md:hidden " onClick={toggleMenu}>
                     <svg
                         width="32"
                         height="32"
@@ -34,15 +34,32 @@ export default function Layout() {
                         <line x1="4" y1="17" x2="15" y2="17" />
                     </svg>
                 </div>
-                <NavLink to="." className="font-bold text-lg">
+                <NavLink to="." className="font-bold text-lg md:mr-auto">
                     Pasteries Delight
                 </NavLink>
-                <NavLink to="cart" className="font-bold flex relative">{value > 0 ? <span className='flex items-center justify-center bg-amber-600 p-1 absolute text-xs w-4 h-4 rounded-full -top-2 -left-3'>{value}</span> : null}
+                <NavLink to="cart" className="font-bold flex relative md:order-3">{value > 0 ? <span className='flex items-center justify-center bg-amber-600 p-1 absolute text-xs w-4 h-4 rounded-full -top-2 -left-3'>{value}</span> : null}
                     <img src="./images/cart.svg" alt="cart-icon" aria-label='link to purchase page' />
                 </NavLink>
 
-                <ul className={`absolute bg-white z-30 transitio duration-300 ease-in ${collapseMenu ? "-top-60" : "top-0"} text-amber-600 text-sm font-semibold left-0 right-0 items-center py-3 flex flex-col gap-3 shadow-md`}>
+                <ul className={`absolute bg-white z-30 transitio duration-300 md:hidden ease-in ${collapseMenu ? "-top-60" : "top-0"} text-amber-600 text-sm font-semibold left-0 right-0 items-center py-3 flex flex-col gap-3 shadow-md`}>
                     <li onClick={closeMenu} className=""><img className='w-6' src="./images/close.svg" alt="close-icon" /></li>
+                    <NavLink
+                        to="."
+                        className={({ isActive }) => isActive ? "font-bold border-b-2 pb-1" : ""}>Home</NavLink>
+                    <NavLink
+                        to="profile"
+                        className={({ isActive }) => isActive ? "font-bold border-b-2 pb-1" : ""}>Profile</NavLink>
+                    <NavLink
+                        to="products"
+                        className={({ isActive }) => isActive ? "font-bold border-b-2 pb-1" : ""}>Products</NavLink>
+                    <NavLink
+                        to="cart"
+                        className={({ isActive }) => isActive ? "font-bold border-b-2 pb-1" : ""}>Order</NavLink>
+                    <NavLink
+                        to="services"
+                        className={({ isActive }) => isActive ? "font-bold border-b-2 pb-1" : ""}>Services</NavLink>
+                </ul>
+                <ul className={`hidden z-30 transitio duration-300 ease-in text-gray-800 text-sm font-semibold left-0 right-0 items-center py-3 md:flex gap-3`}>
                     <NavLink
                         to="."
                         className={({ isActive }) => isActive ? "font-bold border-b-2 pb-1" : ""}>Home</NavLink>
