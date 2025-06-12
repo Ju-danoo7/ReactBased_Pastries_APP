@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { featuredPastries } from "../Details";
 import Container from "./Container";
 import { useOutletContext } from "react-router";
@@ -9,6 +9,7 @@ export default function Order() {
     const itemsInCartArr = Object.entries(cart).map(([id, item]) => item.amount)
     const cartItemsnum = itemsInCartArr.reduce((acc, amount) => acc + amount, 0);
     const [Layout, setLayout] = useState(false);
+    const topRef = useRef(null);
     useEffect(() => {
         setValue(cartItemsnum);
     }, [cartItemsnum])
@@ -26,6 +27,25 @@ export default function Order() {
             [id]: { ...prev[id], carted, amount: carted ? 1 : 0 }
         }));
     }
+    function handleLayoutChange() {
+        setLayout(!Layout);
+        scrollToTop();
+    }
+    function handleLayoutChangeOut() {
+        setCart(prev => {
+            const newCart = { ...prev };
+            featuredPastries.forEach(pastry => {
+                newCart[pastry.id] = { ...newCart[pastry.id], amount: 0, carted: false };
+            });
+            setLayout(false);
+            return newCart;
+        })
+    }
+    function scrollToTop() {
+        if (topRef.current) {
+            topRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }
     const total = featuredPastries.reduce((sum, pastry) => {
         const item = cart[pastry.id];
         return sum + (item?.amount || 0) * pastry.price;
@@ -41,24 +61,11 @@ export default function Order() {
                 </div>
             </div> : null
     );
-    function handleLayoutChange() {
-        setLayout(!Layout);
-    }
-    function handleLayoutChangeOut() {
-        setCart(prev => {
-            const newCart = { ...prev };
-            featuredPastries.forEach(pastry => {
-                newCart[pastry.id] = { ...newCart[pastry.id], amount: 0, carted: false };
-            });
-            setLayout(false);
-            return newCart;
-        })
-    }
 
     return (
         <>
             <div className="bg-slate-50 relative p-3 flex flex-col gap-4 min-h-screen font-Poppins">
-                <h1 className="font-bold text-2xl pl-8 font-Poppins">Cart Component</h1>
+                <h1 ref={topRef} className="font-bold text-2xl pl-8 font-Poppins">Cart Component</h1>
                 {featuredPastries.map(pastry => <Container
                     key={pastry.id}
                     image={pastry.image}

@@ -6,7 +6,6 @@ import Footer from './Footer';
 
 export default function Layout() {
     const [collapseMenu, setCollapseMenu] = useState(true);
-    const [emptyCart, setEmptyCart] = useState(true);
     const [value, setValue] = useState(0);
 
     const toggleMenu = () => {
