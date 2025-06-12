@@ -8,6 +8,7 @@ export default function Order() {
     const [value, setValue] = useOutletContext()
     const itemsInCartArr = Object.entries(cart).map(([id, item]) => item.amount)
     const cartItemsnum = itemsInCartArr.reduce((acc, amount) => acc + amount, 0);
+    const [Layout, setLayout] = useState(false);
     useEffect(() => {
         setValue(cartItemsnum);
     }, [cartItemsnum])
@@ -40,24 +41,53 @@ export default function Order() {
                 </div>
             </div> : null
     );
+    function handleLayoutChange() {
+        setLayout(!Layout);
+    }
+    function handleLayoutChangeOut() {
+        featuredPastries.forEach(pastry => setCart(prev => ({
+            ...prev,
+            [pastry.id]: { ...prev[id], amount: 0 }
+        })));
+        setLayout(!Layout);
+    }
 
     return (
         <>
-            <h1 className="font-bold text-2xl pl-8 font-Poppins">Cart Component</h1>
-            {featuredPastries.map(pastry => <Container
-                key={pastry.id}
-                image={pastry.image}
-                price={pastry.price}
-                name={pastry.name}
-                id={pastry.id}
-                amount={cart[pastry.id]?.amount || 0}
-                carted={cart[pastry.id]?.carted || false}
-                onAmountChange={handleAmountChange}
-                onCartedChange={handleCartedChange}
-            />)}
+            <div className="bg-slate-50 relative p-3 flex flex-col gap-4 min-h-screen font-Poppins">
+                <h1 className="font-bold text-2xl pl-8 font-Poppins">Cart Component</h1>
+                {featuredPastries.map(pastry => <Container
+                    key={pastry.id}
+                    image={pastry.image}
+                    price={pastry.price}
+                    name={pastry.name}
+                    id={pastry.id}
+                    amount={cart[pastry.id]?.amount || 0}
+                    carted={cart[pastry.id]?.carted || false}
+                    onAmountChange={handleAmountChange}
+                    onCartedChange={handleCartedChange}
+                />)}
 
-            {
-                value > 0 ?
+                {
+                    value > 0 ?
+                        <div className="m-4 bg-white shadow-md p-4 rounded-md flex flex-col gap-2">
+                            {selectedItems}
+                            <div className="p-4 flex flex-col gap-2 mx-auto">
+                                <div className="flex justify-center gap-4 text-lg">
+                                    <p className="font-semibold">Total :</p>
+                                    <span className="font-semibold">{cartItemsnum} Items @</span>
+                                    <span className="font-bold">${total.toLocaleString("en", { minimumFractionDigits: 2 })}</span>
+                                </div>
+                            </div>
+                            <button onClick={handleLayoutChange}
+                                className="bg-amber-600 text-white font-bold text-lg tracking-wide w-full h-12 rounded-lg">
+                                Checkout
+                            </button>
+                        </div>
+                        :
+                        <p className="text-center text-gray-500 m-4 bg-white shadow-md p-4 rounded-md">Your cart is empty</p>
+                }
+                {Layout && <div className="absolute inset-0 bg-gray-300/50 z-10">
                     <div className="m-4 bg-white shadow-md p-4 rounded-md flex flex-col gap-2">
                         {selectedItems}
                         <div className="p-4 flex flex-col gap-2 mx-auto">
@@ -67,14 +97,13 @@ export default function Order() {
                                 <span className="font-bold">${total.toLocaleString("en", { minimumFractionDigits: 2 })}</span>
                             </div>
                         </div>
-                        <button className="bg-amber-600 text-white font-bold text-lg tracking-wide w-full h-12 rounded-lg">
-                            Checkout
+                        <button onClick={handleLayoutChangeOut}
+                            className="bg-amber-600 text-white font-bold text-lg tracking-wide w-full h-12 rounded-lg">
+                            Confirm Order
                         </button>
                     </div>
-                    :
-                    <p className="text-center text-gray-500 m-4 bg-white shadow-md p-4 rounded-md">Your cart is empty</p>
-            }
-
+                </div>}
+            </div>
         </>
     )
 }

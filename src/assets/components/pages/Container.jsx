@@ -15,7 +15,7 @@ export default function Container(props) {
 
     return (
         <>
-            <div id={props.id} className=" shadow-lg p-2 w-full">
+            <div id={props.id} className=" shadow-lg p-2 w-full bg-white rounded-lg">
                 <div className="flex w-full justify-center items-center">
                     <div className="relative flex w-full justify-center items-center rounded-sm">
                         <img src={props.image} alt="pastry image" className="w-full h-75 rounded-md" />
@@ -36,7 +36,7 @@ export default function Container(props) {
                     </div>
                 </div>
                 <div className=" flex justify-center flex-col p-3">
-                    <h3 className="font-bold text-md">{props.name}</h3>
+                    <h3 className="font-semibold text-md">{props.name}</h3>
                     <h3 className="font-bold text-lg">${(props.price).toLocaleString("en", { minimumFractionDigits: 2 })}</h3>
                 </div>
             </div>
